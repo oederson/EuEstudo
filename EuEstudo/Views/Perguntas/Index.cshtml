@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PerguntasModel>
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Questões</h1>
+        <a class="btn btn-outline-dark mx-2" asp-controller="Perguntas" asp-action="Cadastrar">Cadastrar nova questão</a>
+    </div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Questão</th>
+            <th scope="col">Resposta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach(var pergunta in Model)
+            {
+            <tr>
+                <th scope="row">@pergunta.Id</th>
+                <td>@pergunta.Questao</td>
+                <td>@pergunta.Resposta</td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
+</div>

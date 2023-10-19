@@ -24,6 +24,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Perguntas/Cadastrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzXENhZGFzdHJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Perguntas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
