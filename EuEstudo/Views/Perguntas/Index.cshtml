@@ -12,6 +12,7 @@
             <th scope="col">ID</th>
             <th scope="col">Questão</th>
             <th scope="col">Resposta</th>
+            <th scope="col" />
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,10 @@
                 <th scope="row">@pergunta.Id</th>
                 <td>@pergunta.Questao</td>
                 <td>@pergunta.Resposta</td>
+                <td>
+                   <a asp-controller="Perguntas" asp-action="Editar" asp-route-id="@pergunta.Id" class="btn btn-outline-dark">Editar</a>
+                   <a asp-controller="Perguntas" asp-action="Excluir" asp-route-id="@pergunta.Id" class="btn btn-outline-dark">Excluir</a>
+                </td>
             </tr>
             }
         }

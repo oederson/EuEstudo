@@ -24,7 +24,7 @@ namespace EuEstudo.Controllers
 
         [HttpPost]
         
-        public IActionResult Cadastrar( PerguntasModel pergunta)
+        public IActionResult Cadastrar(PerguntasModel pergunta)
         {
 
             Console.WriteLine($"Questao{pergunta.Questao}");
@@ -39,6 +39,57 @@ namespace EuEstudo.Controllers
                 }
             return View(pergunta);
 
+        }
+        [HttpGet]
+        public IActionResult Editar(int? id) 
+        {
+            if(id == null || id == 0) 
+            {
+                return NotFound();
+            }
+            PerguntasModel pergunta = _database.Perguntas.FirstOrDefault(x => x.Id == id);
+            if(pergunta == null)
+            {
+                return NotFound();
+            }
+            return View(pergunta);
+        }
+        [HttpPost]
+        public IActionResult Editar(PerguntasModel pergunta)
+        {
+            if(ModelState.IsValid) 
+            {
+                _database.Perguntas.Update(pergunta);
+                _database.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(pergunta);
+        }
+        [HttpGet]
+        public IActionResult Excluir(int id) 
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            PerguntasModel pergunta = _database.Perguntas.FirstOrDefault(x => x.Id == id);
+            if (pergunta == null)
+            {
+                return NotFound();
+            }
+            return View(pergunta);
+
+        }
+        [HttpPost]
+        public IActionResult Excluir(PerguntasModel pergunta)
+        {
+             if(pergunta == null) 
+            { 
+            return NotFound();
+            }
+             _database.Perguntas.Remove(pergunta);
+            _database.SaveChanges();
+            return RedirectToAction("Index");   
         }
     }
 }

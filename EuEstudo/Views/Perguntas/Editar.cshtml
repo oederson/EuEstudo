@@ -1,0 +1,34 @@
+﻿@model EuEstudo.Models.PerguntasModel
+<div class="container  p-5 rounded-5">
+    <h4>Editar questões</h4>
+    <hr />
+    <input type="hidden" asp-for="Id"/>
+
+    <form method="post" asp-action="Editar">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="Questao" class="control-label"></label>
+            <input asp-for="Questao" class="shadow-none form-control" />
+            <span asp-validation-for="Questao" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Resposta" class="control-label"></label>
+            <input asp-for="Resposta" class="shadow-none form-control" />
+            <span asp-validation-for="Resposta" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Editar" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
