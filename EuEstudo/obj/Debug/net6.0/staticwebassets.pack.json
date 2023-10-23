@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\EuEstudo.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\ederh\\ProjetosPessoais\\EuEstudo\\wwwroot\\css\\lux.css",
+      "PackagePath": "staticwebassets\\css\\lux.css"
+    },
+    {
       "Id": "C:\\Users\\ederh\\ProjetosPessoais\\EuEstudo\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

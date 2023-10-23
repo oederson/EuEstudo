@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tWJg/OcL8rxybE46MK6cdqQOABVDm7jtgAJ2LBhhdAY=",
+  "Hash": "bnvAUDiJDsh5zsCv/uYy4pzxBSu0+0rv/sfRZlrZ8fE=",
   "Source": "EuEstudo",
   "BasePath": "_content/EuEstudo",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\ederh\\ProjetosPessoais\\EuEstudo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EuEstudo.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\ederh\\ProjetosPessoais\\EuEstudo\\wwwroot\\css\\lux.css",
+      "SourceId": "EuEstudo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ederh\\ProjetosPessoais\\EuEstudo\\wwwroot\\",
+      "BasePath": "_content/EuEstudo",
+      "RelativePath": "css/lux.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\lux.css"
     },
     {
       "Identity": "C:\\Users\\ederh\\ProjetosPessoais\\EuEstudo\\wwwroot\\css\\site.css",
