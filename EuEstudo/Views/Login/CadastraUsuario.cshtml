@@ -1,0 +1,44 @@
+﻿@model EuEstudo.Models.CadastrarUsuarioModel
+
+<div class="container  p-5 rounded-5">
+    <h4>Cadastar usuário</h4>
+    <hr />
+
+    <form method="post" asp-action="CadastraUsuario">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="Username" class="control-label">Nome de usuário</label>
+            <input asp-for="Username" class="shadow-none form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Password" class="control-label">Senha</label>
+            <input asp-for="Password" class="shadow-none form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+         <div class="mb-3">
+            <label asp-for="RePassword" class="control-label">Redigitar senha</label>
+            <input asp-for="RePassword" class="shadow-none form-control" />
+            <span asp-validation-for="RePassword" class="text-danger"></span>
+        </div> 
+
+        <div class="mb-3">
+            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

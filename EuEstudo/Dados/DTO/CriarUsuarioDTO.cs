@@ -7,7 +7,7 @@ public class CriarUsuarioDTO
     [Required]
     public string Username { get; set; }
     [Required]
-    public DateTime DataCadastro { get; set; }
+    public DateTime DataCadastro { get; set; } = DateTime.Now;
     [Required]
     [DataType(DataType.Password)]
     public string Password { get; set; }

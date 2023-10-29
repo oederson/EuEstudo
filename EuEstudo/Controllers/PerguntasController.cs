@@ -1,9 +1,11 @@
 ﻿using EuEstudo.Dados;
+using EuEstudo.Filters;
 using EuEstudo.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EuEstudo.Controllers
 {
+    [PaginaUsuarioLogado]
     public class PerguntasController : Controller
     {
         private readonly AppDbContext _database;
@@ -22,16 +24,14 @@ namespace EuEstudo.Controllers
             return View();
         }
 
-        [HttpPost]
-        
+        [HttpPost]        
         public IActionResult Cadastrar(PerguntasModel pergunta)
         {
 
             Console.WriteLine($"Questao{pergunta.Questao}");
 
             if (ModelState.IsValid) 
-            {
-            Console.WriteLine("Entrei no if");
+            {            
             _database.Perguntas.Add(pergunta);
             _database.SaveChanges();
 

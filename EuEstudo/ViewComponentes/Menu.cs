@@ -9,7 +9,7 @@ namespace EuEstudo.ViewComponentes
         public async Task<IViewComponentResult> InvokeAsync() 
         {
             string sessaoUsuario = HttpContext.Session.GetString("sessaoUsuarioLogado");
-            if (string.IsNullOrEmpty(sessaoUsuario)) return null;
+            if (string.IsNullOrEmpty(sessaoUsuario)) return Content(string.Empty);
             Usuario usuario = JsonSerializer.Deserialize<Usuario>(sessaoUsuario);
             return View(usuario);
         }
