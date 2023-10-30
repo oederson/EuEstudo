@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Usuario> signInManager
+
+@if (signInManager.IsSignedIn(User))
+{
+    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Olá, @User.Identity.Name</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Perguntas" asp-action="index">Questões</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Disciplina" asp-action="index">Disciplinas</a>
+            </li>
+            <li class="nav-item">
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button type="submit"   style="width:auto"
+                            class="nav-link text-dark btn btn-link py-0 mt-2">
+                            Logout
+                        </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+}
+else
+{
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="logo">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Eu estudo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="d-flex">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="CadastraUsuario">Cadastrar</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+}

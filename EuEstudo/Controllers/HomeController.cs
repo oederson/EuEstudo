@@ -1,11 +1,9 @@
-﻿using EuEstudo.Filters;
-using EuEstudo.Models;
+﻿using EuEstudo.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace EuEstudo.Controllers
 {
-    [PaginaUsuarioLogado]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,12 +12,13 @@ namespace EuEstudo.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
             return View();
         }
-
+        
+        
         public IActionResult Privacy()
         {
             return View();

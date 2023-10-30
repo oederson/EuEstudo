@@ -1,0 +1,44 @@
+﻿@model IEnumerable<EuEstudo.Models.PerguntasModel>
+@{
+    int linaId = Model.First().DisciplinaId;
+
+}
+<a class="btn btn-outline-dark mx-2" asp-controller="Perguntas" asp-action="Cadastrar" asp-route-id="@linaId">Cadastrar nova questão</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Questao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resposta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disciplina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Questao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resposta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disciplina.Nome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>                    
+            </td>
+        </tr>
+        
+    
+}
+    </tbody>
+</table>

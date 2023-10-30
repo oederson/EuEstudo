@@ -1,11 +1,13 @@
 ﻿using EuEstudo.Dados;
-using EuEstudo.Filters;
+
 using EuEstudo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EuEstudo.Controllers
 {
-    [PaginaUsuarioLogado]
+    [Authorize]
     public class PerguntasController : Controller
     {
         private readonly AppDbContext _database;
@@ -15,29 +17,30 @@ namespace EuEstudo.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<PerguntasModel> questoes = _database.Perguntas;
-            return View(questoes);
+            return View();
         }
         [HttpGet]
-        public IActionResult Cadastrar() 
+        public IActionResult Cadastrar(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            PerguntasModel perguntaModel = new PerguntasModel();
+            perguntaModel.DisciplinaId = (int)id;
+ 
+
+            return View(perguntaModel);
         }
 
         [HttpPost]        
         public IActionResult Cadastrar(PerguntasModel pergunta)
         {
-
-            Console.WriteLine($"Questao{pergunta.Questao}");
-
-            if (ModelState.IsValid) 
-            {            
-            _database.Perguntas.Add(pergunta);
+            //TO DO : Pricisa de atenção
+            _database.Perguntas.Add(pergunta); 
             _database.SaveChanges();
-
-            return RedirectToAction("Index");
-                }
-            return View(pergunta);
+            return RedirectToAction("Index" , "Disciplina");
 
         }
         [HttpGet]
@@ -90,6 +93,19 @@ namespace EuEstudo.Controllers
              _database.Perguntas.Remove(pergunta);
             _database.SaveChanges();
             return RedirectToAction("Index");   
+        }
+        public IActionResult ListarPorDisciplinaId(int id)
+        {            
+            var perguntas = _database.Perguntas
+                            .Where(p => p.DisciplinaId == id)
+                            .Include(p => p.Disciplina)
+                            .ToList();
+            if(perguntas.Count == 0) 
+            {
+                //TO DO :Enviar mensagem que a Disciplina não tem questões
+                return RedirectToAction("Index", "Disciplina"); ;
+            }
+            return View(perguntas);
         }
     }
 }

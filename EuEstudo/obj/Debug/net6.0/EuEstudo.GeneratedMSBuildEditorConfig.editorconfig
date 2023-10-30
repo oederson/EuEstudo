@@ -16,8 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ederh\ProjetosPessoais\EuEstudo
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Home/Components/Menu/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wb25lbnRzXE1lbnVcRGVmYXVsdC5jc2h0bWw=
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Account/CadastraUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDYWRhc3RyYVVzdWFyaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Disciplina/Cadastrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxDYWRhc3RyYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Disciplina/Excluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxFeGNsdWlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Disciplina/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Home/Index.cshtml]
@@ -26,34 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Login/CadastraUsuario.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2FkYXN0cmFVc3VhcmlvLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Create-.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXENyZWF0ZS0uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/PerguntasModels/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzTW9kZWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Perguntas/Cadastrar.cshtml]
@@ -72,12 +64,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Perguntas/ListarPorDisciplinaId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZ3VudGFzXExpc3RhclBvckRpc2NpcGxpbmFJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/Components/Menu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/_LogadoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dhZG9QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -91,10 +95,6 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/_Layout-TESTE.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQtVEVTVEUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-6pruwwazts
 
 [C:/Users/ederh/ProjetosPessoais/EuEstudo/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

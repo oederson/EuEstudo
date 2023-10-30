@@ -2,9 +2,10 @@
 
 <div class="container  p-5 rounded-5">
 <h4>Cadastar questões</h4>
-<hr />
-
-    <form method="post" asp-action="Cadastrar">
+<hr/>
+     <form method="post" asp-action="Cadastrar">
+        <input type="hidden" asp-for="Id" value=0 />
+        <input type="hidden" asp-for="DisciplinaId" value="@Model.DisciplinaId" />
        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
          <div class="mb-3">
             <label asp-for="Questao" class="control-label"></label>
@@ -16,6 +17,7 @@
              <input asp-for="Resposta" class="shadow-none form-control" />
              <span asp-validation-for="Resposta" class="text-danger"></span>
          </div>
+         
          <div class="mb-3">
              <input type="submit" value="Cadastrar" class="btn btn-primary" />
          </div>

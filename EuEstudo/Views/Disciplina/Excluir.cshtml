@@ -1,0 +1,30 @@
+﻿@model EuEstudo.Models.DisciplinaModel
+<div class="container  p-5 rounded-5">
+    <h4>Excluir disciplina</h4>
+    <hr />
+    <input type="hidden" asp-for="Id" />
+    <h2>Deseja excluir a disciplina ?</h2>
+
+    <form method="post" asp-action="Excluir">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="Nome" class="control-label"></label>
+            <input asp-for="Nome" class="shadow-none form-control" disabled />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <input type="submit" value="Excluir" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

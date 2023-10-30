@@ -22,6 +22,29 @@ namespace EuEstudo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("EuEstudo.Models.DisciplinaModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsuarioId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Disciplinas");
+                });
+
             modelBuilder.Entity("EuEstudo.Models.PerguntasModel", b =>
                 {
                     b.Property<int>("Id")
@@ -29,6 +52,9 @@ namespace EuEstudo.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DisciplinaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Questao")
                         .IsRequired()
@@ -39,6 +65,8 @@ namespace EuEstudo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DisciplinaId");
 
                     b.ToTable("Perguntas");
                 });
@@ -244,6 +272,28 @@ namespace EuEstudo.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("EuEstudo.Models.DisciplinaModel", b =>
+                {
+                    b.HasOne("EuEstudo.Models.Usuario", "Usuario")
+                        .WithMany("Disciplina")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("EuEstudo.Models.PerguntasModel", b =>
+                {
+                    b.HasOne("EuEstudo.Models.DisciplinaModel", "Disciplina")
+                        .WithMany("Pergunta")
+                        .HasForeignKey("DisciplinaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Disciplina");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -293,6 +343,16 @@ namespace EuEstudo.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EuEstudo.Models.DisciplinaModel", b =>
+                {
+                    b.Navigation("Pergunta");
+                });
+
+            modelBuilder.Entity("EuEstudo.Models.Usuario", b =>
+                {
+                    b.Navigation("Disciplina");
                 });
 #pragma warning restore 612, 618
         }

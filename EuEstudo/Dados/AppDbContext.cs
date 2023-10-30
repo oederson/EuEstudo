@@ -8,5 +8,6 @@ namespace EuEstudo.Dados
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
         public DbSet<PerguntasModel> Perguntas { get; set; }
+        public DbSet<DisciplinaModel> Disciplinas { get; set;}
     }
 }
