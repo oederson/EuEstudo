@@ -1,74 +1,58 @@
-﻿
-using AutoMapper;
-using EuEstudo.Data.DTO;
-using EuEstudo.Models;
+﻿using EuEstudo.Data.DTO;
 using EuEstudo.Service;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EuEstudo.Controllers
+namespace EuEstudo.Controllers;
+
+public class AccountController : Controller
 {
-    public class AccountController : Controller
+    private AccountService _accountService;
+    
+    public AccountController(AccountService accountService)
     {
-        private IMapper _mapper;
-        private UserManager<Usuario> _userManager;
-        private SignInManager<Usuario> _signInManager;
-        
-        public AccountController( UserManager<Usuario> userManager, SignInManager<Usuario> signInManager,IMapper mapper)
-        {
-            
-            _mapper = mapper;
-            _userManager = userManager;
-            _signInManager = signInManager;
-        }
-        public IActionResult Index()
-        {            
-            return View();
-        }
-        public IActionResult Login()
-        {
-            return View();
-        }
+        _accountService = accountService;
+    }
+    public IActionResult Index()
+    {            
+        return View();
+    }
+    public IActionResult Login()
+    {
+        return View();
+    }
+    public IActionResult CadastraUsuario()
+    {
+        return View();
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> Login(LoginUsuarioDTO dto)
-        {
-                var resultado = await _signInManager.PasswordSignInAsync(dto.Username, dto.Password, false, false);
-                if (!resultado.Succeeded)
-                {
-                    return View();
-                }
-            return RedirectToAction("Index","Home");
-        }
-        [HttpGet]
-        public IActionResult CadastraUsuario()
-        {
-            return View();
-        }
+    [HttpPost]
+    public async Task<IActionResult> Login(LoginUsuarioDTO dto)
+    {
+        if(await _accountService.Login(dto)) return RedirectToAction("Index", "Home");
+        //TODO : Retrun view precisa de mensagem de erro para o front.
+        return View();
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> CadastraUsuario(CriarUsuarioDTO dto)
+    [HttpPost]
+    public async Task<IActionResult> CadastraUsuario(CriarUsuarioDTO dto)
+    {
+        switch(await _accountService.CadastraUsuario(dto)) 
         {
-            Usuario usuario = _mapper.Map<Usuario>(dto);
-            IdentityResult resultado = await _userManager.CreateAsync(usuario, dto.Password);
-                    if (!resultado.Succeeded)
-                    {
-                        throw new ApplicationException("Falha ao cadastrar usuário");
-                    }
-           LoginUsuarioDTO loginDTO = _mapper.Map<LoginUsuarioDTO>(dto);
-            var res = await _signInManager.PasswordSignInAsync(loginDTO.Username, loginDTO.Password, false, false);
-            if (!res.Succeeded)
-            {
-                return View();
-            }
-            return RedirectToAction("Index", "Home");
+            //TODO: Mensagem para o front que não foi possivel cadastrar o usuário
+            case null: return View(); break;
+            //TODO: Mensagem para o front que foi possivel cadastrar o usuário, mais não foi possivel logar 
+            case false: return View(); break;
+            //Deu tudo certo
+            case true: return RedirectToAction("Index", "Home"); break;
+            default: 
         }
-        [HttpPost]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
+    }
 
+    [HttpPost]
+    public async Task<IActionResult> Logout()
+    {
+        if(await _accountService.LogOut()) return RedirectToAction("Index", "Home");
+        //TODO : Retrun view precisa de mensagem de erro para o front.
+        return RedirectToAction("Index", "Home");
     }
 }
