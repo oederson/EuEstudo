@@ -16,7 +16,7 @@ public class AccountController : Controller
     {            
         return View();
     }
-    public IActionResult Login()
+    public IActionResult Login(string userName)
     {
         return View();
     }
@@ -39,12 +39,11 @@ public class AccountController : Controller
         switch(await _accountService.CadastraUsuario(dto)) 
         {
             //TODO: Mensagem para o front que não foi possivel cadastrar o usuário
-            case null: return View(); break;
+            case null: return View();             
             //TODO: Mensagem para o front que foi possivel cadastrar o usuário, mais não foi possivel logar 
-            case false: return View(); break;
-            //Deu tudo certo
-            case true: return RedirectToAction("Index", "Home"); break;
-            default: 
+            case false: return View();             //Deu tudo certo
+            case true: return RedirectToAction("Index", "Home");             
+            default:; 
         }
     }
 

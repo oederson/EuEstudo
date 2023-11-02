@@ -11,9 +11,9 @@ namespace EuEstudo.Service
         private UserManager<Usuario> _userManager;
         private SignInManager<Usuario> _signInManager;
 
+        public AccountService(){}
         public AccountService(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, IMapper mapper)
         {
-
             _mapper = mapper;
             _userManager = userManager;
             _signInManager = signInManager;
@@ -41,12 +41,8 @@ namespace EuEstudo.Service
                 return null;
             }
             LoginUsuarioDTO loginDTO = _mapper.Map<LoginUsuarioDTO>(dto);
-            var res = await _signInManager.PasswordSignInAsync(loginDTO.Username, loginDTO.Password, false, false);
-            if (!res.Succeeded)
-            {
-                return false;
-            }
-            return true;
+            if(await Login(loginDTO)) return true; 
+            return false;
         }
     }
 }
