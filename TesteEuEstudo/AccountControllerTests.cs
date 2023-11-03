@@ -6,7 +6,7 @@ using EuEstudo.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using TesteEuEstudo.FakesMockado;
+using TesteEuEstudo.FakesParaMock;
 
 namespace TesteEuEstudo
 {

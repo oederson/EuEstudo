@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using Moq;
 
 
-namespace TesteEuEstudo.FakesMockado
+namespace TesteEuEstudo.FakesParaMock
 {
     public class FalsoSignInManager : SignInManager<Usuario>
     {
