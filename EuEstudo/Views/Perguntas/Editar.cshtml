@@ -3,6 +3,7 @@
     <h4>Editar questões</h4>
     <hr />
     <input type="hidden" asp-for="Id"/>
+    
 
     <form method="post" asp-action="Editar">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -16,6 +17,7 @@
             <input asp-for="Resposta" class="shadow-none form-control" />
             <span asp-validation-for="Resposta" class="text-danger"></span>
         </div>
+        <input type="hidden" asp-for="DisciplinaId" />
         <div class="mb-3">
             <input type="submit" value="Editar" class="btn btn-primary" />
         </div>

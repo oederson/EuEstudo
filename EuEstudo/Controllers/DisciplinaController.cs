@@ -30,9 +30,8 @@ public class DisciplinaController : Controller
 
     [HttpGet]
     public async Task<IActionResult> Excluir(int id)
-    {
-        var res = await _disciplinaService.ExcluirDisciplina(id);
-        return  res == null ? View() : View(res);
+    {        
+        return View(await _disciplinaService.ExcluirDisciplina(id));
     }
 
     [HttpPost]

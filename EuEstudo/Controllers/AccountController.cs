@@ -39,11 +39,12 @@ public class AccountController : Controller
         switch(await _accountService.CadastraUsuario(dto)) 
         {
             //TODO: Mensagem para o front que não foi possivel cadastrar o usuário
-            case null: return View();             
+            //case null: return View();             
             //TODO: Mensagem para o front que foi possivel cadastrar o usuário, mais não foi possivel logar 
             case false: return View();             //Deu tudo certo
-            case true: return RedirectToAction("Index", "Home");             
-            default:; 
+            case true: return RedirectToAction("Index", "Home");
+            //TODO: Mensagem para o front que não foi possivel cadastrar o usuário
+            default: return View(); ; 
         }
     }
 

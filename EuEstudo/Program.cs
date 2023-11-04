@@ -14,6 +14,7 @@ builder.Services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<A
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<AccountService>();
 builder.Services.AddScoped<DisciplinaService>();
+builder.Services.AddScoped<PerguntasService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
