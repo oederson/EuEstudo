@@ -1,6 +1,5 @@
 ﻿using EuEstudo.Dados;
 using EuEstudo.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EuEstudo.Service

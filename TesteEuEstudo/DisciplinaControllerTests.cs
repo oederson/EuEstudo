@@ -4,7 +4,6 @@ using EuEstudo.Dados;
 using EuEstudo.Models;
 using EuEstudo.Service;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using TesteEuEstudo.FakesParaMock;
 
@@ -12,25 +11,18 @@ namespace EuEstudo.Tests
 {
     public class DisciplinaControllerTests 
     {
-        private AppDbContext dbContext;
-        private DisciplinaService _disciplinaService;
-        private DisciplinaController _controller;
-        private Mock<FalsoUserManager> _userManager;
+        private readonly AppDbContext _dbContext;
+        private readonly DisciplinaService _disciplinaService;
+        private readonly DisciplinaController _controller;
+        private readonly Mock<FalsoUserManager> _userManager;
 
         public DisciplinaControllerTests()
         {
-            var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseInMemoryDatabase(databaseName: "InMemoryAppDatabase") 
-            .Options;
-            dbContext = new AppDbContext(options);
-            var disciplina1 = new DisciplinaModel { Nome = "Disciplina 1", UsuarioId = "123" };
-            var disciplina2 = new DisciplinaModel { Nome = "Disciplina 2", UsuarioId = "123" };
-            dbContext.Disciplinas.Add(disciplina1);
-            dbContext.Disciplinas.Add(disciplina2);
-            dbContext.SaveChanges(); 
+            var initializer = new AppDbContextTest();
+            _dbContext = initializer.GetContext();
 
             _userManager = new Mock<FalsoUserManager>();
-            _disciplinaService = new DisciplinaService(dbContext, _userManager.Object);
+            _disciplinaService = new DisciplinaService(_dbContext, _userManager.Object);
             _controller = new DisciplinaController(_disciplinaService);
         }
 
@@ -50,7 +42,7 @@ namespace EuEstudo.Tests
             var listaDeDisciplinas = (List<DisciplinaModel>)model;
             Assert.Equal("Disciplina 1", listaDeDisciplinas[0].Nome);
             Assert.Equal("Disciplina 2", listaDeDisciplinas[1].Nome);
-            Dispose();
+            _dbContext.Dispose();
         }
 
         [Fact]
@@ -68,7 +60,7 @@ namespace EuEstudo.Tests
             var result =  await _controller.Cadastrar(dis);
             //Assert
             Assert.IsType<RedirectToActionResult>(result);
-            Dispose();
+            _dbContext.Dispose();
         }
         [Fact]
         public async Task ExcluirUmaDisciplina()
@@ -87,11 +79,7 @@ namespace EuEstudo.Tests
             var result = await _controller.Excluir(disciplina);
             //Assert
             Assert.IsType<RedirectToActionResult>(result);
-            Dispose();
-        }
-        public void Dispose()
-        {
-            dbContext.Dispose();// Isso apagará o banco de dados InMemory após a execução dos testes
+            _dbContext.Dispose(); 
         }
 
     }
