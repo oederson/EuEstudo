@@ -12,11 +12,11 @@ namespace TesteEuEstudo
 {
     public class AccountServiceTests
     {
-        private IMapper mapper;
-        private AccountController controller;
-        private AccountService _accountService;
-        private Mock<FalsoUserManager> _userManager;
-        private Mock<FalsoSignInManager> _signInManager;
+        private readonly IMapper mapper;
+        private readonly AccountController controller;
+        private readonly AccountService _accountService;
+        private readonly Mock<FalsoUserManager> _userManager;
+        private readonly Mock<FalsoSignInManager> _signInManager;
 
         public AccountServiceTests()
         {
